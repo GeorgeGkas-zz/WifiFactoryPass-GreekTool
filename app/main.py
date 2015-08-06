@@ -208,9 +208,17 @@ class Main_window_ex(QMainWindow, Ui_Main_window):
             elif self.essid[0:6] == 'conn-x':
                 if self.essid[6:12] == self.bssid[9:17].replace(':','').lower():
                     print 'key is ' + self.bssid.replace(':','').lower()
+                     print 'try that key too ' + '1234567890123'
+                else:
+                    print 'try that key ' + '1234567890123'
             elif self.essid[0:4] ==  'OTE':
                 if self.essid[4:11] == self.bssid[9:17].replace(':','').tolower():
                     print 'key is ' + self.bssid.replace(':','').lower()
+                    print 'try that key too ' + '1234567890123'
+                    print 'try that key too' + '0' + self.bssid.replace(':','').lower()
+                else:
+                    print 'try that key ' + '1234567890123'
+                    print 'try that key too' + '0' + self.bssid.replace(':','').lower()
             else:
                 print 'Couldn\'t fing known network. We\' get the Handshake though!'
                 self.w.show()
