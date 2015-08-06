@@ -4,4 +4,4 @@ Work in Ubuntu distro.
 
 correctly Alpha Vesrion. Support for NetFaster, Cyta, Wep passwords. 
 
-No more info provided, at least until community ask for it. 
+No more info provided, at least until community ask for. 
