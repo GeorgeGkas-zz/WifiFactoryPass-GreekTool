@@ -1,6 +1,7 @@
 WifiFactoryPass-GreekTool 
-[![Build Status](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool.svg)](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool) [![Code Health](https://landscape.io/github/GeorgeGkas/WifiFactoryPass-GreekTool/master/landscape.svg?style=flat-square)](https://landscape.io/github/GeorgeGkas/WifiFactoryPass-GreekTool/master) ![](https://img.shields.io/badge/version-0.1-blue.svg?style=flat-square)  ![](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square) ![](https://img.shields.io/badge/licence-LGPL%20v3.0-green.svg?style=flat-square) 
 ================================
+[![Build Status](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool.svg)](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool) [![Code Health](https://landscape.io/github/GeorgeGkas/WifiFactoryPass-GreekTool/master/landscape.svg?style=flat-square)](https://landscape.io/github/GeorgeGkas/WifiFactoryPass-GreekTool/master) ![](https://img.shields.io/badge/version-0.1-blue.svg?style=flat-square)  ![](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square) ![](https://img.shields.io/badge/licence-LGPL%20v3.0-green.svg?style=flat-square) 
+
 
 
 ----------
