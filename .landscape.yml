@@ -1,4 +1,0 @@
-pylint:
-  disable:
-    - undefined-variable
-    - super-on-old-class
