@@ -5,3 +5,5 @@ python:
 sudo: required
 # command to run tests
 script: nosetests
+install:
+  - pip install PySide
