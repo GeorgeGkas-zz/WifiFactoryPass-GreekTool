@@ -5,7 +5,6 @@ python:
 sudo: required
 
 before_install:
-  - sudo apt-get install -qq aircrack-ng
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   # Cached Downloads
@@ -19,6 +18,8 @@ before_install:
 
 
 install:
+  #aircrack suit
+  - sudo apt-get install -y aircrack-ng
   # Qt4
   - sudo apt-get install -y libqt4-dev
   # SIP
