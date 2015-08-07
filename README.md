@@ -46,7 +46,7 @@ This project uses Travis CI to perform tests on linux (Ubuntu 14.04 LTS). On lin
 ###License
 You may use, modify, and redistribute this software under the terms of the [LGPL v3.0](http://www.gnu.org/licenses/lgpl-3.0.html) License. See LICENSE.
 
-##Changelog
+#Changelog
 
 ####**Version**  **0.1**
 
