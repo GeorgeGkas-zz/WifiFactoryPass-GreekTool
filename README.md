@@ -39,8 +39,9 @@ To install PyQt4 we type the following line:
 
  * For Ideas, Bug Reports, or any other question, create a ''**New Issue**''
 
-###Continuous Integration 
+###Continuous Integration & Test
 This project uses Travis CI to perform tests on linux (Ubuntu 14.04 LTS). On linux, Python 2.7 with PyQt4, and Aircrack are tested.
+[Landscape.io](https://landscape.io) also provide code health and maintenance support.
 
 ###License
 You may use, modify, and redistribute this software under the terms of the [LGPL v3.0](http://www.gnu.org/licenses/lgpl-3.0.html) License. See LICENSE.
