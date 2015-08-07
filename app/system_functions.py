@@ -91,14 +91,19 @@ def get_wireless_card():
     airmon = commands.getoutput("airmon-ng | egrep -e '^[a-z]{2,4}[0-9]'")
 
     airmon = airmon.split('\n')
-
+    device_interface = list()
     for interface in airmon:
         if interface == "":
                 continue
-
-    interface = interface.split('\t')
-    print 'Device interface we using is' + interface[0]
-    return interface[0]
+        elif interface[0:3] == 'mon':
+            tmp_inteface = interface.split('\t')
+            print 'found enable monitor mode :' + tmp_inteface[0]
+            print 'we are going to remove it'
+            disable_monitor_mode(tmp_inteface[0])
+        elif interface[0:4] == 'wlan':
+            device_interface = interface.split('\t')
+    print 'Device interface we using is' + device_interface[0]
+    return device_interface[0]
 
 
 def get_device_mac(device_interface):
@@ -115,7 +120,8 @@ def enable_monitor_mode(device_interface):
         print 'Monitor Mode enabled successfuly on divice: ' + device_interface
 
 def disable_monitor_mode(device_interface):
-    status = commands.getstatusoutput('airmon-ng stop mon0')
+    command = 'airmon-ng stop ' + device_interface
+    status = commands.getstatusoutput(str(command))
     if status[0] != 0: 
         print 'Error getting ' + device_interface + ' back to Manage mode'
     else:
@@ -210,43 +216,6 @@ def parse_output(self, output):
 
         self.table_networks.clearSelection()
         commands.getstatusoutput('rm wifi-scan*')
-
-
-def wpe_injection(essid, bssid):
-    injection_test = 'aireplay-ng -9 -e ' + essid + ' -a ' + bssid + '--ignore-negative-one mon0'
-    ct = Command_thread(str(injection_test))
-    ct.start()
-
-def wpe_airodump_capture(bssid, channel):
-    airodump_capture = 'airodump-ng -c ' + channel + ' --bssid ' + bssid + ' -w output mon0'
-    ct = Command_thread(str(airodump_capture))
-    ct.start()
-
-def fake_authentication(essid, bssid, host_mac):
-    fake_auth = 'aireplay-ng -1 6000 -o 1 -q 10 -e ' + essid + ' -a ' + bssid + ' -h ' + host_mac + ' mon0'
-    ct = Command_thread(str(fake_auth))
-    ct.start()
-
-def capture_packets(bssid, host_mac):
-    capture_ivs = 'aireplay-ng -3 -b ' + bssid + ' -h ' + host_mac + ' mon0'
-    ct = Command_thread(str(capture_ivs))
-    ct.start()
-
-
-def get_wpe_capture_file(essid, bssid, channel, host_mac):
-    wpe_injection(essid, bssid)
-    time.sleep(5)
-    wpe_airodump_capture(bssid, channel)
-    time.sleep(5)
-    fake_authentication(essid, bssid, host_mac)
-    time.sleep(5)
-    capture_packets(bssid, host_mac)
-
-def crack_wpe_key(bssid):
-    fake_auth = 'aircrack-ng -b ' + bssid + ' output*.cap'
-    ct = Command_thread(fake_auth)
-    ct.start()
-
 
 
 
