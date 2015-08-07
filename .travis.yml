@@ -12,8 +12,6 @@ before_install:
   - sudo chmod a+rw /downloads
   - if [ ! -f /downloads/sip.tar.gz ];   then curl -L -o /downloads/sip.tar.gz http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.5/sip-4.16.5.tar.gz; fi
   - if [ ! -f /downloads/pyqt4.tar.gz ]; then curl -L -o /downloads/pyqt4.tar.gz http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt-x11-gpl-4.11.4.tar.gz; fi
-  - echo '6d01ea966a53e4c7ae5c5e48c40e49e5  /downloads/sip.tar.gz' | md5sum -c -
-  - echo '997c3e443165a89a559e0d96b061bf70  /downloads/pyqt4.tar.gz' | md5sum -c -
   # Builds
   - sudo mkdir -p /builds
   - sudo chmod a+rw /builds
