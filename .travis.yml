@@ -9,7 +9,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - sudo apt-get update -qq
   #aircrack suit
-  - sudo apt-get install -y aircrack-ng
+  - sudo apt-get install aircrack-ng
   # Cached Downloads
   - sudo mkdir -p /downloads
   - sudo chmod a+rw /downloads
