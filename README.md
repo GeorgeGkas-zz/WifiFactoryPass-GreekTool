@@ -5,8 +5,6 @@ WifiFactoryPass-GreekTool
 ----------
 WifiFactoryPass is an **Aircrack** based GUI tool,  created for reasons of flexibility and fun. As the name implies, the tool developed to work mainly in Greek home routers. 
 
-The Project isn't created just to publish another Aircrack GUI tool in public, but to help even the person who does not know anything about computers to crack with success a network from downloaded the Ubuntu Distro until the last command.
-
 #Requirements
 The program uses **Qt4** Library, **Python 2.7**, **PyQt4** and **Aircrack** suit.
 To run it will need to install the above dependencies. Check the following  paragraphs to know how to install it.
