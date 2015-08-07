@@ -11,7 +11,7 @@ WifiFactoryPass is an **Aircrack** based GUI tool,  created for reasons of flexi
 The program uses **Qt4** Library, **Python 2.7**, **PyQt4** and **Aircrack** suit.
 To run it will need to install the above dependencies. Check the next paragraph for that!
 
-To run the program we need to have root previlages. In Backtack/Kali Linux distros we just run the bellow line, but in Ubuntu we have to add *sudo* argument before:
+To run the program we need to have root previlages. In Backtack/Kali Linux distros we just run the bellow line, but in Ubuntu we have to add **sudo** argument before:
 
 	python main.py
 
