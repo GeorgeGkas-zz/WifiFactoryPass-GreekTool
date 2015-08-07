@@ -5,6 +5,7 @@ python:
 sudo: required
 
 before_install:
+  - sudo apt-get install -qq aircrack-ng
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   # Cached Downloads
@@ -42,8 +43,3 @@ cache:
   
 # command to run tests
 script: nosetests
-
-addons:
-  apt:
-    sources:
-    - aircrack-ng
