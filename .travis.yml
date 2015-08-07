@@ -20,9 +20,15 @@ before_install:
 
 
 install:
-  - pip install PySide
   # Qt4
   - sudo apt-get install -y libqt4-dev
+  # SIP
+  - tar xzf /downloads/sip.tar.gz --keep-newer-files
+  - pushd sip-4.16.5
+  - python configure.py
+  - make
+  - sudo make install
+  - popd
   # PyQt4
   - tar xzf /downloads/pyqt4.tar.gz --keep-newer-files
   - pushd PyQt-x11-gpl-4.11.3
@@ -30,6 +36,11 @@ install:
   - make
   - sudo make install
   - popd
+  
+cache:
+  directories:
+    - /downloads
+  apt: true
   
 # command to run tests
 script: nosetests
