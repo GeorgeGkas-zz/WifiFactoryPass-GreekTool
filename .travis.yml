@@ -31,6 +31,9 @@ install:
   - sudo make install
   - popd
   
+# command to run tests
+script: nosetests
+
 addons:
   apt:
     sources:
