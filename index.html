@@ -6,11 +6,59 @@
 	<link rel="stylesheet" type="text/css" href="website/css/main.css"></link>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="website/css/bootstrap.min.css"></link>
+	<script type="text/javascript">
+	menu_is_show = false;
+	$(document).ready(function(){
+		if ($(window).width() <= 600) {
+       		$('#menu-ul').removeClass('cl-effect-1');
+       		$('#menu-div').hide()
+  		}
+  		else {
+  			$('#menu-ul').addClass('cl-effect-1');
+  			$('#menu-btn').hide()
+  		}
+ 
+	});
+
+	$(function() {
+		
+       	$('#menu-btn').click(function(){
+       		
+				
+				if (menu_is_show === false) {
+					$('#menu-div').show();
+					menu_is_show = true;
+				}
+				else {
+					$('#menu-div').hide();
+					menu_is_show = false;
+				}
+			
+  		});       
+   });
+
+	$(window).bind('resize', function(){
+		if ($(window).width() <= 600) {
+       		$('#menu-ul').removeClass('cl-effect-1');
+       		$('#menu-div').hide()
+       		$('#menu-btn').show()
+  		}
+  		else {
+  			$('#menu-ul').addClass('cl-effect-1');
+  			$('#menu-div').show()
+  			$('#menu-btn').hide()
+  		}
+	});
+	</script>
 </head>
 <body>
-		<nav>
+		<div class="menu-button" id="menu-btn">
+			<img src="http://thefounderspledge.org/images/menu-fe5f9c80.svg" />
+		</div>
+		<div id="menu-div">
+		 <nav>
 			<center>
-			<ul class='cl-effect-1'>
+			<ul id='menu-ul'>
 				<li>
 					<a href="#">Home</a> 
 				</li> 
@@ -22,12 +70,14 @@
 				</li> 
 				<li >
 					<a href="#">About</a> 
-				</li> 	
-				<a class="button" href="#">GR</a>			
+				</li> 
+				<a class="button" href="#">GR</a>
 			</ul>
 			</center>
 
 		</nav>
+		</div>
+
 		<div class="header-tag">
 			Simplifying airckrack procedure 
 		</div>
