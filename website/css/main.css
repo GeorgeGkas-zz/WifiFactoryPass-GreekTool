@@ -60,6 +60,7 @@ nav {
 	letter-spacing: 0.05em !important;
 	font-size: 16px !important;
 	padding-top: 10px;
+	margin-left: -60px;
 }
 
 nav ul li {
@@ -69,8 +70,7 @@ nav ul li {
 
 .header-tag {
 	padding-top: 15px;
-	padding-right: 15px;
-	padding-left: 15px;
+	
 	text-align: center;
 	display: block;
 	font-size: 15px;
@@ -94,7 +94,7 @@ nav ul li {
 	font-size: 12px;
 	color: #565054;
 	max-width: 400px;
-	padding:  10px 20px;
+	padding-top: 10px;
 	margin: 5px auto 0px;
 	text-align: center;
 }
@@ -108,7 +108,7 @@ nav ul {
 	color: #FFF !important;
 	border-radius: 3px;
 	padding: 10px 20px !important;
-	font-weight: bold;
+	font-weight: bold !important;
 	letter-spacing: 0.05em;
 	display: inline-block;
 	border-width: medium medium 2px;
@@ -119,4 +119,48 @@ nav ul {
 	-moz-border-bottom-colors: none;
 	-moz-border-left-colors: none;
 	border-image: none;
+}
+
+.menu-button {
+
+	right: 10px;
+	top: 10px;
+	position: fixed;
+	cursor: pointer;
+	padding: 5px 10px 10px 10px;
+	display: inline-block;
+
+}
+
+@media only screen and ( max-width: 600px){
+	nav ul li {
+	display: block;
+	text-align: center;
+	margin-right: -10px;	
+	padding-top: 12px;
+	margin: 2px 5px 5px;
+	padding-left: 12px;
+	}
+	.button {
+		margin-left: 15px;
+		margin-top: 15px !important;
+	}
+
+	html a {
+		font-family: 'Raleway', serif !important;
+		font-size: 1.5em;
+		color: #3F3D46 ;
+		text-decoration: none !important;
+	}
+
+	html a:hover {
+		color: #3F3D46;
+	}
+
+	.header-tag {
+		padding-top: 50px;
+	}
+
+
+
 }
