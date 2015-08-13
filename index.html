@@ -3,6 +3,7 @@
 <head>
 	<title>WifiFactoryPass-GreekTool</title>
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'></link>
+	<link href="//fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700" rel="stylesheet" type="text/css"></link>
 	<link rel="stylesheet" type="text/css" href="website/css/main.css"></link>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="website/css/bootstrap.min.css"></link>
@@ -26,11 +27,11 @@
        		
 				
 				if (menu_is_show === false) {
-					$('#menu-div').show();
+					$('#menu-div').slideToggle();
 					menu_is_show = true;
 				}
 				else {
-					$('#menu-div').hide();
+					$('#menu-div').slideToggle();
 					menu_is_show = false;
 				}
 			
@@ -53,8 +54,9 @@
 </head>
 <body>
 		<div class="menu-button" id="menu-btn">
-			<img src="http://thefounderspledge.org/images/menu-fe5f9c80.svg" />
+			<img src="http://thefounderspledge.org/images/menu-fe5f9c80.svg"/>
 		</div>
+		
 		<div id="menu-div">
 		 <nav>
 			<center>
@@ -63,13 +65,13 @@
 					<a href="#">Home</a> 
 				</li> 
 				<li >
-					<a href="#">Wiki</a> 
+					<a href="website/pages/blog.html">Wiki</a> 
 				</li> 
 				<li >
 					<a href="#">Contribute</a> 
 				</li> 
 				<li >
-					<a href="#">About</a> 
+					<a href="website/pages/about.html">About</a> 
 				</li> 
 				<a class="button" href="#">GR</a>
 			</ul>
@@ -77,13 +79,56 @@
 
 		</nav>
 		</div>
+		<div id="container">
+		<div class="logo">
+			WifiFactoryPass
+		</div>
+			<div class="header-tag">
+			Simplifying Wifi penetration testing
+		</div>
+		<center>
+		<div  >
+			<ul class="badges">
+				<li>
+					<img src="https://img.shields.io/badge/health-100%25-yellowgreen.svg?style=flat-square" />
+				</li>
+				<li>
+					<img src="https://img.shields.io/badge/version-0.1-blue.svg?style=flat-square" />
+				</li>
+				<li>
+					<img src="https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square" /> 
+				</li>
+				<li>
+					<img src="https://img.shields.io/badge/licence-LGPL%20v3.0-green.svg?style=flat-square" />
+				</li>
+			</ul>
+		</div>
+		</center>
+			<div class="img-holder">
+			<!-- <div class="header-tag">
+			Simplifying Wifi penetration testing
+		</div>
+		
+		
+		<div class="informations">
 
-		<div class="header-tag">
-			Simplifying airckrack procedure 
+		<div class="informations-text">
+			<img src="website/img/plainwifi.png" style="max-width:80%; max-height:80%;" />
+		</div>
+		</div> -->
+		<center>
+			<img src="website/img/main-index.png"  style="max-width:100%; max-height:100%; padding-top: 20px;" />
+			</center>
 		</div>
 
+
+		
 		<div class="header-comment">
 			Working on tight schedules we need sometimes internet connection on the road. WifiFactoryPass is a greate tool which get things done easily, reliable and fast. Specially created for Greek Home Routers.
+		</div>
+
+		
+
 		</div>
 		<div class="copyright">Copyright WifiFactoryPass-GreekTool 2015-2016</div>
 </body>
