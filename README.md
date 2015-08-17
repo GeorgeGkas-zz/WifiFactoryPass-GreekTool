@@ -6,7 +6,7 @@ WifiFactoryPass-GreekTool
 WifiFactoryPass is an **Aircrack** based GUI tool,  created for reasons of flexibility and fun. As the name implies, the tool developed to work mainly in Greek home routers. 
 
 #Requirements
-The program uses **Qt4** Library, **Python 2.7**, **PyQt4** and **Aircrack** suit.
+The program uses **PyQt4**, **Reaver v1.4 -t6x-fork** and **Aircrack** suit.
 To run it will need to install the above dependencies. Check the following  paragraphs to know how to install it.
 
 ##Usage
@@ -19,15 +19,9 @@ For more informations, about the GUI and how to use it, check [Wiki](https://git
 
 
 ##Installing Dependencies
-Aircrack suit comes installed in Backtrack/Kali Linux distros. For Ubuntu we have to install it using the following line:
+Aircrack and Reaver suits comes installed in Backtrack/Kali Linux distros. For Ubuntu we have to install it using the following line:
 
-	sudo apt-get install aircrack-ng
-
-To install Qt Designer 4 we have to simply go to main download page and download it from there. (It is GUI installer, no trouble with terminal commads).  [Qt Download page](http://www.qt.io/download/)
-
-To install PyQt4 we type the following line:
-
-	sudo apt-get install python-qt4
+	sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev python-qt4 aircrack-ng
 
 
 #Acknowledgements
