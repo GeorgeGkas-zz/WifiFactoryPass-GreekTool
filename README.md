@@ -21,7 +21,7 @@ For more informations, about the GUI and how to use it, check [Wiki](https://git
 ##Installing Dependencies
 Aircrack and Reaver suits comes installed in Backtrack/Kali Linux distros. For Ubuntu we have to install it using the following line:
 
-	sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev python-qt4 aircrack-ng
+	sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev python-qt4 aircrack-ng libssl-dev
 
 
 #Acknowledgements
