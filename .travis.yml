@@ -1,0 +1,47 @@
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+sudo: required
+
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sudo apt-get update -qq
+  #aircrack suit
+  #- sudo apt-get install aircrack-ng
+  # Cached Downloads
+  - sudo mkdir -p /downloads
+  - sudo chmod a+rw /downloads
+  - if [ ! -f /downloads/sip.tar.gz ];   then curl -L -o /downloads/sip.tar.gz http://sourceforge.net/projects/pyqt/files/sip/sip-4.16.5/sip-4.16.5.tar.gz; fi
+  - if [ ! -f /downloads/pyqt4.tar.gz ]; then curl -L -o /downloads/pyqt4.tar.gz http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt-x11-gpl-4.11.4.tar.gz; fi
+  # Builds
+  - sudo mkdir -p /builds
+  - sudo chmod a+rw /builds
+
+
+install:
+  # Qt4
+  - sudo apt-get install -y libqt4-dev
+  # SIP
+  - tar xzf /downloads/sip.tar.gz --keep-newer-files
+  - pushd sip-4.16.5
+  - python configure.py
+  - make
+  - sudo make install
+  - popd
+  # PyQt4
+  - tar xzf /downloads/pyqt4.tar.gz --keep-newer-files
+  - pushd PyQt-x11-gpl-4.11.4
+  - python configure.py -c --confirm-license --no-designer-plugin -e QtCore -e QtGui
+  - make
+  - sudo make install
+  - popd
+  
+cache:
+  directories:
+    - /downloads
+  apt: true
+  
+# command to run tests
+script: nosetests
