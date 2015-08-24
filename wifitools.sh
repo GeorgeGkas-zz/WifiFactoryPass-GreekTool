@@ -1,3 +1,3 @@
  #!/bin/bash 
 
-sudo python .wifitools/main.py
+sudo python wifitools/main.py

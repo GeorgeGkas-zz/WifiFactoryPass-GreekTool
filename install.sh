@@ -44,9 +44,9 @@ echo "Successfully installed reaver 1.4 with pixiewps support"
 echo "We are going to install WifiFactoryPass-GreekTool now! "
 cd ~
 cd Downloads
-cd WifiFactoryPass-GreekTool
+cd WifiFactoryPass-GreekTool-master
 
-sudo cp -r  wifitools ../../.wifitools
+sudo cp -r  wifitools /../../usr/bin/wifitools
 chmod 777 wifitools.sh
 sudo cp wifitools.sh /usr/bin/
 
