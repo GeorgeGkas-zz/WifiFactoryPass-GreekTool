@@ -1,0 +1,39 @@
+Changelog---------
+
+Current under develop - v0.2
+
+remove macchanger need to change mac adress of wireless card.
+Now we use ifconfig
+
+cleaner code structure in parse_output() function
+
+Add collum in network_table to check if a network is cracked (YES/NO).
+If it is and when the user press the "Attack" button a message will pop up with the key
+
+Log system is now in use. Log files are generated when the program
+got an error
+
+Fixes some crash issues - not all
+
+Read cap file of airodump attack window for handshake.If found kill the airodump
+
+Check for WPS support of an network reading the cap file of airodump
+
+add function to process WPS supported networks
+
+Disbale scan button when scanning is taking place
+
+Added better mac change supprort using real mac vendors.
+
+Make a preferences toolbox
+
+added reset button that help us to uncover from bugs or to terminate the procedure
+without the need to restart the program
+
+Toolbox-------------
+Add option for user spesific mac adress, both vendor and serial support
+
+Add option for choose of wireless card. If not chosed then the first one
+discovered will be used. This is practical if we use a wireless usb card
+
+

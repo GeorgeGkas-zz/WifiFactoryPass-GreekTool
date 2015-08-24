@@ -1,0 +1,18 @@
+23:28:26 - Program started-----
+23:28:40 - Aircrack suit located on our machine.
+23:28:40 - Network Manager stop process: [Success]
+23:28:41 - Device interface we using is: wlan0
+23:28:41 - Our true mac is: 00:60:4e:21:47:47
+23:28:41 - Taking interface wlan0 down: [Success]
+23:28:41 - Changing mac adress on device wlan0: [Failure]
+23:28:41 - Taking interface wlan0 up: [Success]
+23:28:42 - Setting device wlan0into Monitor mode: [Success]
+23:28:43 - -----Now we're going to scan for avaible networks-----
+23:28:56 - Network scanning process: [Success]
+23:29:06 - Setting device mon0into Managed mode: [Success]
+23:29:06 - Taking interface wlan0 down: [Success]
+23:29:06 - Changing to true mac adress on device wlan0: [Success]
+23:29:06 - Returning mac adress 00:60:4e:21:47:47 to device.
+23:29:07 - Taking interface wlan0 up: [Success]
+23:29:07 - Network Manager start process: [Success]
+23:29:07 - Program ended-----

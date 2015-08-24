@@ -1,0 +1,15 @@
+23:41:10 - Program started-----
+23:41:11 - Aircrack suit located on our machine.
+23:41:11 - Network Manager stop process: [Failure]
+23:41:11 - Found enable monitor mode: mon0
+23:41:12 - We are going to remove it
+23:41:12 - Setting device mon0into Managed mode: [Success]
+23:41:12 - Device interface we using is: wlan0
+23:41:12 - Our true mac is: 22:31:ad:51:17:94
+23:41:12 - Taking interface wlan0 down: [Success]
+23:41:12 - Changing mac adress on device wlan0: [Success]
+23:41:12 - New device mac adress is: f4:5f:d4:25:59:10 : Cisco SPVTG
+23:41:13 - Taking interface wlan0 up: [Success]
+23:41:14 - Setting device wlan0into Monitor mode: [Success]
+23:41:14 - -----Now we're going to scan for avaible networks-----
+23:41:27 - Network scanning process: [Success]

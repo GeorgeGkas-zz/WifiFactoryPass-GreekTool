@@ -41,6 +41,25 @@ You may use, modify, and redistribute this software under the terms of the [LGPL
 
 #Changelog
 
+####**Version**  **0.2**
+
+ - Remove macchanger. Now uses ifconfig
+ - Add collum in network_table to check if a network is cracked (YES/NO).
+   If it is and when the user press the "Attack" button a message will pop up with the key
+ - Log system is now in use. Log files are generated when program fails in any commands
+ - Fixes some crash issues -Not all of them-
+ - Read cap file of airodump attack window for handshake.If found kill the airodump
+ - Check for WPS support of an network reading the cap file of airodump
+ - PixieDust Attack added in WPS supported networks
+ - Update the UI elements and how their behave
+ - Added better mac support using real vendors
+ - Preferences Window created
+ - Reset Process button added to help us uncover from bugs in runtime (If Any)
+ - Add option for user spesific mac adress, both vendor and serial support
+ - Add option for choose of wireless card. If not chosed then the first one
+   discovered will be used. This is practical if we use a wireless usb card
+
+
 ####**Version**  **0.1**
 
  - First Alpha Release

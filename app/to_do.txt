@@ -1,0 +1,10 @@
+To DO List--------
+
+*Reveal hiden ssid network when we choose it and press "Attack button"
+ With airodump will start and a deauthontication attack to reveal it.
+
+
+* Clean the code. Seriously!
+
+Added all the on the heep created files in temp folder.
+This helps us to recover from need of manually deleted files
