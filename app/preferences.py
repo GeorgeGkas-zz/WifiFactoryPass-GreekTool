@@ -180,7 +180,6 @@ class Ui_Preferences_Dialog(object):
             random_mac_vendor = macv
             with open('variables.txt', 'r+') as f:
                 variables = f.readlines()
-                print variables
                 variables[0] = 'random_mac_vendor|' + str(random_mac_vendor) + '\n'
                 f.seek(0)
                 for info in variables:
@@ -207,7 +206,6 @@ class Ui_Preferences_Dialog(object):
             random_mac_serial = macs
             with open('variables.txt', 'r+') as f:
                 variables = f.readlines()
-                print variables
                 variables[1] = 'random_mac_serial|' + str(random_mac_serial) + '\n'
                 f.seek(0)
                 for info in variables:
@@ -239,7 +237,6 @@ class Ui_Preferences_Dialog(object):
             wicard = self.wicard_choose.currentText()
             with open('variables.txt', 'r+') as f:
                 variables = f.readlines()
-                print variables
                 variables[2] = 'wicard|' + str(wicard) + '\n'
                 f.seek(0)
                 for info in variables:

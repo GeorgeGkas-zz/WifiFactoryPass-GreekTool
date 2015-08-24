@@ -8,7 +8,7 @@ import random
 
 from threading import Thread
 from PyQt4 import QtGui, QtCore
-
+from speed_touch import *
 
 class RetardedKill(Thread):
     def __init__ (self, prog, sec):
@@ -35,7 +35,7 @@ class Command_thread(Thread):
     def run(self):
 
         # exec command
-        print (self.command)
+        #print (self.command)
 
         # use terminal emulator?
         if self.use_term:
@@ -474,7 +474,6 @@ def change_mac_adress(self, device_interface):
         macs = mac_serial[1][0:2] + ':' + mac_serial[1][2:4] + ':' + mac_serial[1][4:-1]
         mac_info.append(str(macv) + ':' + str(macs))
         mac_info.append('User defined')
-        print mac_info
     elif mac_vendor[1][0:-1]:
         mac_v = str()
         macv = mac_vendor[1][0:2] + ':' + mac_vendor[1][2:4] + ':' + mac_vendor[1][4:-1]
@@ -488,10 +487,8 @@ def change_mac_adress(self, device_interface):
                 two_digit = str(byte)
             mac_v =  mac_v + ':' + two_digit
         mac_v = macv + mac_v
-        print mac_v
         mac_info.append(str(mac_v))
         mac_info.append('User defined')
-        print mac_info
     elif mac_serial[1][0:-1]:
         mac_s = str()
         macs = mac_serial[1][0:2] + ':' + mac_serial[1][2:4] + ':' + mac_serial[1][4:-1]
@@ -505,10 +502,8 @@ def change_mac_adress(self, device_interface):
                 two_digit = str(byte)
             mac_s =  mac_s + ':' + two_digit
         mac_s = mac_s[1:] + ':' + macs
-        print mac_s
         mac_info.append(str(mac_s))
         mac_info.append('User defined')
-        print mac_info
 
     else:
         mac_info = get_mac_info()
@@ -526,7 +521,6 @@ def change_mac_adress(self, device_interface):
 
     changemac = 'ifconfig ' + device_interface + ' hw ether ' + mac_info[0]
     statuscm = commands.getstatusoutput(changemac)
-    print statuscm
     if statuscm[0] != 0:
         output(self, 'Changing mac adress on device ' + str(device_interface) + ': ', 1) 
     else:
@@ -574,9 +568,14 @@ def check_wpa_essid(self):
         direct_output(self, 'You can make a NetFaster password recovery')
         self.w.show()
     elif self.essid[0:8] == 'Thomson' or self.essid[0:10] == 'speedtouch':
-        widget = QWidget()
-        QtGui.QMessageBox.about(widget, "Thomson Network", "Thomnson crack not implemented yet")
-        #direct_output(self, 'Thomnson crack not Implemented yet')
+        keys = thomson_calc(str(self.essid[8:]))
+        if not keys:
+            direct_output(self, '\nThis model is not supported. Supported models are from 2004 to 2010')
+        direct_output(self, '\nAvailable options are...')
+        num = 1
+        for key in keys:
+            direct_output(self, 'Key ' + num + ' : ' + '<b>' + key + '</b>')
+            num += 1
                 
     elif self.essid[0:6] == 'conn-x':
         if self.essid[6:12] == self.bssid[9:17].replace(':','').lower():

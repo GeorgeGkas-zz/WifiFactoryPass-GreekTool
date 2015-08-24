@@ -1,3 +1,0 @@
-random_mac_vendor|
-random_mac_serial|
-wicard|
