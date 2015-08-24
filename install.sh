@@ -31,9 +31,6 @@ echo "Successfully installed reaver 1.4 with pixiewps support"
 
 function install_wifitools(user){
 echo "We are going to install WifiFactoryPass-GreekTool now! "
-wget https://github.com/GeorgeGkas/WifiFactoryPass-GreekTool/archive/master.zip && unzip master.zip
-
-cd WifiFactoryPass-GreekTool-master
 sudo cp -r  wifitools ../../home/user/.wifitools
 chmod 777 wifitools.sh
 sudo cp wifitools.sh ../../usr/bin/
@@ -54,7 +51,8 @@ sudo apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev libss
 echo "Now we are going to install aircrack-ng"
 sudo apt-get -y install aircrack-ng
 
-(cd /tmp && install_pixiewps() && install_reaver_fork() && install_wifitools(user))
+(cd /tmp && install_pixiewps() && install_reaver_fork())
+install_wifitools(user)
 
 echo "Finished installation"
 echo "To run the program run wifitools.sh with root privelages"
