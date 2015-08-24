@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'as.ui'
+# Form implementation generated from reading ui file 'main_window.ui'
 #
-# Created: Fri Aug  7 14:08:01 2015
-#      by: PyQt4 UI code generator 4.11.3
+# Created: Sun Aug 23 20:48:10 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -50,7 +50,7 @@ class Ui_Main_window(object):
         self.table_networks.setSizeIncrement(QtCore.QSize(0, 0))
         self.table_networks.setSelectionMode(QtGui.QAbstractItemView.ExtendedSelection)
         self.table_networks.setObjectName(_fromUtf8("table_networks"))
-        self.table_networks.setColumnCount(8)
+        self.table_networks.setColumnCount(11)
         self.table_networks.setRowCount(0)
         item = QtGui.QTableWidgetItem()
         self.table_networks.setHorizontalHeaderItem(0, item)
@@ -68,6 +68,12 @@ class Ui_Main_window(object):
         self.table_networks.setHorizontalHeaderItem(6, item)
         item = QtGui.QTableWidgetItem()
         self.table_networks.setHorizontalHeaderItem(7, item)
+        item = QtGui.QTableWidgetItem()
+        self.table_networks.setHorizontalHeaderItem(8, item)
+        item = QtGui.QTableWidgetItem()
+        self.table_networks.setHorizontalHeaderItem(9, item)
+        item = QtGui.QTableWidgetItem()
+        self.table_networks.setHorizontalHeaderItem(10, item)
         self.verticalLayout.addWidget(self.table_networks)
         spacerItem = QtGui.QSpacerItem(20, 10, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
         self.verticalLayout.addItem(spacerItem)
@@ -92,6 +98,9 @@ class Ui_Main_window(object):
         self.button_attack.setSizePolicy(sizePolicy)
         self.button_attack.setObjectName(_fromUtf8("button_attack"))
         self.horizontalLayout.addWidget(self.button_attack)
+        self.button_reset_process = QtGui.QPushButton(self.widget)
+        self.button_reset_process.setObjectName(_fromUtf8("button_reset_process"))
+        self.horizontalLayout.addWidget(self.button_reset_process)
         spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -103,9 +112,35 @@ class Ui_Main_window(object):
         spacerItem4 = QtGui.QSpacerItem(20, 10, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
         self.verticalLayout.addItem(spacerItem4)
         Main_window.setCentralWidget(self.widget)
+        self.menuBar = QtGui.QMenuBar(Main_window)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 825, 25))
+        self.menuBar.setObjectName(_fromUtf8("menuBar"))
+        self.menuPreferences = QtGui.QMenu(self.menuBar)
+        self.menuPreferences.setObjectName(_fromUtf8("menuPreferences"))
+        self.menuHelp = QtGui.QMenu(self.menuBar)
+        self.menuHelp.setObjectName(_fromUtf8("menuHelp"))
+        Main_window.setMenuBar(self.menuBar)
+        self.actionAbout = QtGui.QAction(Main_window)
+        self.actionAbout.setObjectName(_fromUtf8("actionAbout"))
+        self.actionUpdate_WifiFactoryPass = QtGui.QAction(Main_window)
+        self.actionUpdate_WifiFactoryPass.setObjectName(_fromUtf8("actionUpdate_WifiFactoryPass"))
+        self.actionWiki = QtGui.QAction(Main_window)
+        self.actionWiki.setObjectName(_fromUtf8("actionWiki"))
+        self.actionPreferences = QtGui.QAction(Main_window)
+        self.actionPreferences.setObjectName(_fromUtf8("actionPreferences"))
+        self.menuPreferences.addAction(self.actionPreferences)
+        self.menuHelp.addAction(self.actionAbout)
+        self.menuHelp.addAction(self.actionUpdate_WifiFactoryPass)
+        self.menuHelp.addAction(self.actionWiki)
+        self.menuBar.addAction(self.menuPreferences.menuAction())
+        self.menuBar.addAction(self.menuHelp.menuAction())
 
-        QtCore.QObject.connect(self.button_rescan_networks, QtCore.SIGNAL(_fromUtf8("clicked()")), self.scan_process)
-        QtCore.QObject.connect(self.button_attack, QtCore.SIGNAL(_fromUtf8("clicked()")), self.check_network)
+        # Button Actions
+        self.button_rescan_networks.clicked.connect(self.scan_process)
+        self.button_attack.clicked.connect(self.check_network)
+        self.button_reset_process.clicked.connect(self.reset_process)
+        # Menu Button Actions
+        self.actionPreferences.triggered.connect(self.open_window_preferences)
 
         self.retranslateUi(Main_window)
         QtCore.QMetaObject.connectSlotsByName(Main_window)
@@ -128,6 +163,19 @@ class Ui_Main_window(object):
         item.setText(_translate("Main_window", "Auth", None))
         item = self.table_networks.horizontalHeaderItem(7)
         item.setText(_translate("Main_window", "Mb", None))
+        item = self.table_networks.horizontalHeaderItem(8)
+        item.setText(_translate("Main_window", "Client", None))
+        item = self.table_networks.horizontalHeaderItem(9)
+        item.setText(_translate("Main_window", "WPS", None))
+        item = self.table_networks.horizontalHeaderItem(10)
+        item.setText(_translate("Main_window", "Cracked", None))
         self.button_rescan_networks.setText(_translate("Main_window", "Scan networks", None))
         self.button_attack.setText(_translate("Main_window", "Attack Current Network", None))
+        self.button_reset_process.setText(_translate("Main_window", "Reset Process", None))
+        self.menuPreferences.setTitle(_translate("Main_window", "Options", None))
+        self.menuHelp.setTitle(_translate("Main_window", "Help", None))
+        self.actionAbout.setText(_translate("Main_window", "About", None))
+        self.actionUpdate_WifiFactoryPass.setText(_translate("Main_window", "Update WifiFactoryPass", None))
+        self.actionWiki.setText(_translate("Main_window", "Wiki", None))
+        self.actionPreferences.setText(_translate("Main_window", "Preferences", None))
 
