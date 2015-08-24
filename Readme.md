@@ -1,6 +1,6 @@
 WifiFactoryPass-GreekTool 
 ================================
-[![Build Status](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool.svg)](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool) ![](https://img.shields.io/badge/health-100%25-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/version-0.1-blue.svg?style=flat-square)  ![](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square) ![](https://img.shields.io/badge/licence-LGPL%20v3.0-green.svg?style=flat-square) 
+[![Build Status](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool.svg)](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool) ![](https://img.shields.io/badge/health-100%25-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/version-0.2-blue.svg?style=flat-square)  ![](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square) ![](https://img.shields.io/badge/licence-LGPL%20v3.0-green.svg?style=flat-square) 
 
 -----------
 WifiFactoryPass is an **Aircrack** based GUI tool,  created for reasons of flexibility and fun. As the name implies, the tool developed to work mainly in Greek home routers. 
@@ -58,6 +58,7 @@ You may use, modify, and redistribute this software under the terms of the [LGPL
  - Add option for user spesific mac adress, both vendor and serial support
  - Add option for choose of wireless card. If not chosed then the first one
    discovered will be used. This is practical if we use a wireless usb card
+ - Added Thomson support from routers in year range 2004 - 2010
 
 
 ####**Version**  **0.1**
