@@ -102,7 +102,6 @@ class Ui_Preferences_Dialog(object):
 
         #the above state is changed when the use_random_mac isn't checked
         self.use_random_mac.stateChanged.connect(self.set_mac_state) 
-        self.use_random_vendor.stateChanged.connect(self.proceed_vendor_warning) 
 
 
         # Buttons
@@ -128,14 +127,12 @@ class Ui_Preferences_Dialog(object):
         self.wicard_set.setText(_translate("Preferences_Dialog", "Set", None))
 
 
-    def proceed_vendor_warning(self):
-        if self.use_random_vendor.isChecked():
-            widget = QWidget()
-            QtGui.QMessageBox.warning(widget, "Warning", "<center>Using your own mac vendor might not work.<center>Please read a reference in mac adresses.Not all combinations work.</center><center>If you don't know what you are doing please UNCHECK that box</center>")
-            return
-
 
     def set_mac_state(self):
+    	if not self.use_random_mac.isChecked():
+            widget = QWidget()
+            QtGui.QMessageBox.warning(widget, "Warning", "<center>Using your own mac might not work.<center>Please read a reference in mac adresses.Not all combinations work.</center><center>If you don't know what you are doing please RECHECK that box</center>")
+
         if self.use_random_mac.isChecked():
             self.use_random_vendor.hide()
             self.use_random_serial.hide()
@@ -176,7 +173,6 @@ class Ui_Preferences_Dialog(object):
                 widget = QWidget()
                 QtGui.QMessageBox.warning(widget, "Warning", "Only allowed characters 0-9 A-F")
                 return
-            first_octect = int(macv[0:2])
             random_mac_vendor = macv
             with open('variables.txt', 'r+') as f:
                 variables = f.readlines()
@@ -200,8 +196,6 @@ class Ui_Preferences_Dialog(object):
                 widget = QWidget()
                 QtGui.QMessageBox.warning(widget, "Warning", "Only allowed characters 0-9 A-F")
                 return
-
-            first_octect = int(macs[0:2])
 
             random_mac_serial = macs
             with open('variables.txt', 'r+') as f:
