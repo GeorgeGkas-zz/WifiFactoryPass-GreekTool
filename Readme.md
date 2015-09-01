@@ -3,13 +3,13 @@ WifiFactoryPass-GreekTool
 [![Build Status](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool.svg)](https://travis-ci.org/GeorgeGkas/WifiFactoryPass-GreekTool) ![](https://img.shields.io/badge/health-100%25-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/version-0.2-blue.svg?style=flat-square)  ![](https://img.shields.io/badge/python-2.7-blue.svg?style=flat-square) ![](https://img.shields.io/badge/licence-LGPL%20v3.0-green.svg?style=flat-square) 
 
 -----------
-WifiFactoryPass is an **Aircrack** based GUI tool,  created for reasons of flexibility and fun. As the name implies, the tool developed to work mainly in Greek home routers.  
+WifiFactoryPass is an **Aircrack** based GUI tool,  created for reasons of flexibility and fun. As the name implies, it was developed to work mainly in Greek home routers.  
 
 #Requirements
-The program uses **PyQt4**, **Reaver v1.4 -t6x-fork**, **PixieWps** and **Aircrack** suit.
-The program developed in Ubuntu 14.04 and tested on it. Above versions of Ubuntu will work as well, but no other Linux distro is tested.  
+**PyQt4**, **Reaver v1.4 -t6x-fork**, **PixieWps** and **Aircrack** suit required.
+Developed and tested on Ubuntu 14.04. Above versions of the distro will work as well, but no other Linux was tested.  
 **It is recommend to run the program on Ubuntu 14.04+**
-To run it will need to install the above dependencies. Check the following  paragraphs to know how to install it.
+To run you'll need to install the above dependencies. Check the following  paragraphs to know how to install it.
 
 ##Installing Dependencies - Usage
 To install the required dependencies, as described above, you need first to run the installation script that comes with the zip version. Navigate to your folder and run,
@@ -20,14 +20,15 @@ providing the password when you asked.
 The installation might take some time, but when it finished you can run the program from the terminal using the below command:
 
     ./wifitools.sh
+
 For more informations, about the GUI and how to use it, check the [project website](http://georgegkas.github.io/WifiFactoryPass-GreekTool)
 
 #Acknowledgements
 
 ###Author Informations
- * WifiFactoryPass-GreekTool uses aircrack to recover passwords. Airckrack suit have been developed in the last years to hold Windows machines as well, but after a lot of bugs I found and many incompatible network drives, which don't support inject and sniffing in Windows machine, I preferred to develop the app for Ubuntu Linux Systems.
+ * WifiFactoryPass-GreekTool uses aircrack to recover passwords. Airckrack in the last years hold Windows machines as well, but after a lot of bugs I found and many incompatible network drives, which don't support inject and sniffing in Windows machine, I preferred to develop the app for Ubuntu Linux Systems.
  
- * The software is developed mainly for own use. It contains some bugs and lucks of good UI. 
+ * The software is developed mainly for my own use. It contains some bugs and lucks of good UI. 
 
  * For Ideas, Bug Reports, or any other question, create a ''**New Issue**''
 
